@@ -1,0 +1,8 @@
+---
+- name: start mysql
+  community.mysql.mysql_db:
+    name:
+      - MySQL-python
+      - mysql-client
+      - mysql-server
+    state: present

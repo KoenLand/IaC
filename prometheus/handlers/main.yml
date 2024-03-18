@@ -1,0 +1,9 @@
+---
+- name: verify prometheus
+  ansible.builtin.stat:
+    path: "/opt/prometheus/prometheus"
+  register: prometheus_installed
+
+- name: report prometheus
+  ansible.builtin.debug:
+    msg: "Prometheus is {{ 'installed' if prometheus_installed.stat.exists else 'not installed' }}"

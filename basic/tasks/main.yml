@@ -1,0 +1,23 @@
+---
+- name: Install Nginx
+  package:
+    name: nginx
+    state: latest
+    update_cache: yes
+  notify: Restart Nginx
+
+- name: Install NodeJS
+  apt:
+    name: nodejs
+    state: present
+
+- name: Install NPM
+  apt:
+    name: npm
+    state: present
+
+- name: Install Forever
+  npm:
+    name: forever
+    global: yes
+    state: present

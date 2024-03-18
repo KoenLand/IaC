@@ -1,0 +1,22 @@
+---
+- name: Restart Nginx
+  become: true
+  service:
+    name: nginx
+    state: restarted
+
+- name: Install NodeJS
+  apt:
+    name: nodejs
+    state: present
+
+- name: Install NPM
+  apt:
+    name: npm
+    state: present
+
+- name: Install Forever
+  npm:
+    name: forever
+    global: yes
+    state: present

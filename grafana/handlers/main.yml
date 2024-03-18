@@ -1,0 +1,9 @@
+---
+- name: verify grafana
+  ansible.builtin.stat:
+    path: "/opt/grafana/bin/grafana-server"
+  register: grafana_installed
+
+- name: report grafana
+  ansible.builtin.debug:
+    msg: "Grafana is {{ 'installed' if grafana_installed.stat.exists else 'not installed' }}"

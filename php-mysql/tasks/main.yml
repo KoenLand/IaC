@@ -1,0 +1,10 @@
+---
+- name: install php-mysql
+  apt:
+    name:
+      - php-mysql
+      - mysql-server
+    state: latest
+    update_cache: yes
+  #notify:                    # This is commented out, opstarten werkt niet...
+  #  - start php-mysql

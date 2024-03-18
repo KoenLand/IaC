@@ -1,0 +1,9 @@
+---
+- name: install apache2
+  apt:
+    name:
+      - apache2
+    state: latest
+    update_cache: yes
+  #notify:                    # This is commented out, opstarten werkt niet...
+  #  - start apache2
